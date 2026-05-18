@@ -4,8 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>BigPlanetarium -Explore the Milky Way</title>
+  <meta name="description" content="BigPlanetarium Bristol's interactive digital planetarium. Explore the Milky Way, play asteroid shooter, and discover space.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
     <p>hello world</p>
+
+<canvas id="galaxy-canvas"></canvas>
+
+<!-- Accessibility Toolbar on the top right cornerof the page -->
+<div class="access-toolbar" aria-label="Accessibility controls">
+  <button id="highContrastBtn" aria-label="High contrast mode"> High Contrast</button>
+  <button id="fontSizeBtn" aria-label="Increase font size"> A+</button>
+</div>
+
+<!-- Header of the Website-->
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo-container">
+      <div class="logo-placeholder" id="logoPlaceholder">
+        <!-- Space for your logo PNG -->
+        <img id="logoImage" src="Images/logo.png" alt="BigPlanetarium Logo" onerror="this.style.display='none'; document.getElementById('logoText').style.display='flex'">
+        <div id="logoText" class="logo-text" style="display: none;">
+          <span class="logo-icon"></span>
+          <span class="logo-name">BigPlanetarium</span>
+        </div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="#hero">Home</a>
+      <a href="#overview">Milky Way</a>
+      <a href="#planets">Planets</a>
+      <a href="#game">Asteroid Game</a>
+    </nav>
+    <div class="mobile-menu-btn" id="mobileMenuBtn">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <!--the Beginning page -->
+  <section class="hero" id="hero">
+    <h1> Explore the Milky Way</h1>
+    <p>BigPlanetarium Bristol's immersive digital planetarium. 
+      Journey through our galaxy, discover planets, and experience space like never before.</p>
+    <button class="btn" id="exploreBtn">Start Exploring</button>
+  </section>
+
+  <!-- detail explaination on the milky way-->
+  <section id="overview">
+    <h2>Our Galactic Home</h2>
+    <div class="info-card">
+      <p>The Milky Way is a barred spiral galaxy containing 100–400 billion stars, including our Sun. 
+        Sprawling across 100,000 light-years, it's a cosmic wonder. 
+        From glowing nebulae to mysterious black holes, the galaxy invites endless curiosity. 
+        At BigPlanetarium, we bring the universe closer with simulation and wonder.</p>
+      <div style="margin-top: 1.5rem; text-align:center;">
+        <!-- Space for Milky Way image -->
+        <div class="milkyway-image-container">
+          <img id="milkywayImage" src="Images/galaxy.gif" alt="Diagram of Milky Way galaxy" style="max-width:100%; border-radius: 20px;" onerror="this.style.display='none'; document.getElementById('milkywayText').style.display='flex'">
+          <div id="milkywayText" class="milkyway-text" style="display: none;">
+            <p>The Milky Way - our cosmic neighborhood</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- the planets section, choose earth to go to the second page -->
+  <section id="planets">
+    <h2> Planets of Our Galaxy</h2>
+    <div class="planets-grid" id="planetsGrid">
+      <!-- all the planet images were inserted in the javascript -->
+    </div>
+  </section>
+
+  <!-- youtube video for the solar system from national geographic -->
+  <section id="media">
+    <h2>About the Solar System</h2>
+    <div class="info-card" style="margin-bottom:2rem;">
+      <h3>Educational Video: Wonders of the Solar System</h3>
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/libKVRa01L8" title="Space documentary - wonders of solar system" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 20px;"></iframe>
+    </div>
+    <div class="info-card">
+      <h3>🔭 Interactive Orbit Simulation (Gravity Demo)</h3>
+      <canvas id="orbitSim" width="500" height="300" style="width:100%; height:auto; background:#010018; border-radius: 24px;"></canvas>
+      <p style="margin-top: 1rem;">Adjust orbital speed to see how planets move around stars:</p>
+      <input type="range" id="orbitSpeed" min="0" max="0.05" step="0.001" value="0.01">
+      <label for="orbitSpeed">Orbit Speed</label>
+    </div>
+  </section>
+
+  <!-- Astroid game on the end of the page-->
+  <section id="game">
+    <h2>✨ Asteroid Defender Mission</h2>
+    <div class="game-container">
+      <div class="game-header">
+        <div class="game-stats">
+          <span> SCORE:<span id="scoreValue">0</span></span>
+          <span> LIVES:<span id="livesValue">3</span></span>
+          <span> LEVEL:<span id="levelValue">1</span></span>
+        </div>
+        <button id="restartGameBtn" class="game-btn">Start Game</button>
+      </div>
+      <canvas id="gameCanvas" width="900" height="550"></canvas>
+      <div class="game-controls">
+        <p><strong>Controls:</strong> ← → Arrow Keys to move | SPACE or ↑ to shoot</p>
+        <p><strong>Tip:</strong> Destroy asteroids to earn points! Each level gets harder!</p>
+      </div>
+      <button id="muteSound" class="btn mute-btn"> Sound ON</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>BigPlanetarium</h3>
+        <p>Bristol's premier digital planetarium<br>Inspiring curiosity about space since 2024</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#overview">Milky Way</a></li>
+          <li><a href="#planets">Planets</a></li>
+          <li><a href="#game">Asteroid Game</a></li>
+          <li><a href="earth.html">Earth Explorer</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Accessibility</h3>
+        <ul>
+          <li>High Contrast Mode</li>
+          <li>Font Size Adjustment</li>
+          <li>Audio Narration</li>
+          <li>Keyboard Navigation</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p> info@bigplanetarium.com<br> Bristol, UK<br> www.bigplanetarium.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 BigPlanetarium — Exploring the universe, one planet at a time</p>
+    </div>
+  </footer>
+</div>
+
+<script src="JAVASCRIPT/java.js"></script>
 </body>
 </html>

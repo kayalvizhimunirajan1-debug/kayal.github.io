@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>BigPlanetarium | Planet Mercury - The Swift Planet</title>
+  <meta name="description" content="Detailed exploration of Planet Mercury: structure, extreme temperatures, and fascinating facts from BigPlanetarium.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/mercury.css">
+</head>
+<body>
+
+<canvas id="galaxy-canvas"></canvas>
+
+<div class="access-toolbar" aria-label="Accessibility controls">
+  <button id="highContrastBtn" aria-label="High contrast mode"> High Contrast</button>
+  <button id="fontSizeBtn" aria-label="Increase font size"> A+</button>
+</div>
+
+<div class="container">
+  <!-- Header Section -->
+    <a href="index.html" class="back-link">← Back to Milky Way Explorer</a>
+  <section id="header">
+    <h1>Mercury</h1>
+    <p style="text-align: center; font-size: 1.2rem; margin-bottom: 1rem;">Closest to the Sun</p>
+    
+    <!-- Mercury PNG Rotation Container -->
+    <div class="earth-canvas-container">
+      <div class="earth-rotation-wrapper">
+        <img id="mercuryImage" src="Images/mercury.png" alt="Planet Mercury - High resolution image" class="rotating-earth" onerror="this">
+        <div class="earth-glow"></div>
+      </div>
+    </div>
+  </section>
+<!-- Rotation Simulation Controls for the rotating Mercury picture -->
+  <section id="simulation">
+    <h2>Mercury Rotation Control</h2>
+    
+    <div class="simulation-box">
+      <h3>Rotating Mercury PNG</h3>
+      <p>Your Mercury PNG image rotates continuously. 
+        Use the controls below to adjust rotation speed and animation.</p>
+      
+      <div class="speed-control">
+        <label for="rotationSpeed">Rotation Speed (degrees per second):</label>
+        <input type="range" id="rotationSpeed" min="0" max="20" step="0.5" value="8">
+        <span id="speedValue">8°/s</span>
+        <button id="resetSpeed" class="btn" style="padding: 0.3rem 1rem;">Reset Normal Speed</button>
+      </div>
+      
+      <div class="slider-control">
+        <button id="pauseRotationBtn" class="btn" style="padding: 0.5rem 1.2rem;">⏸️ Pause Rotation</button>
+        <button id="resumeRotationBtn" class="btn" style="padding: 0.5rem 1.2rem;">▶️ Resume Rotation</button>
+        <button id="resetRotationBtn" class="btn" style="padding: 0.5rem 1.2rem;">🔄 Reset Position</button>
+      </div>
+    </div>
+  <!-- Planet Overview -->
+  <section id="overview">
+    <h2>📊 Scientifically Accurate Mercury Data</h2>
+    <div class="info-card">
+      <div class="facts-grid">
+        <div class="fact-item"><strong>Distance from Sun:</strong> 57,909,227 km (0.387 AU)</div>
+        <div class="fact-item"><strong>Equatorial Diameter:</strong> 4,879.4 km</div>
+        <div class="fact-item"><strong>Surface Gravity:</strong> 3.7 m/s² (0.38 × Earth)</div>
+        <div class="fact-item"><strong>Atmosphere:</strong> Exosphere - O₂, Na, H₂, He, K</div>
+        <div class="fact-item"><strong>Temperature Range:</strong> -173°C to 427°C</div>
+        <div class="fact-item"><strong>Day Length:</strong> 58.65 Earth days (1,408 hours)</div>
+        <div class="fact-item"><strong>Orbital Period:</strong> 87.97 Earth days</div>
+        <div class="fact-item"><strong>Axial Tilt:</strong> 0.034° (almost no tilt)</div>
+        <div class="fact-item"><strong>Surface Composition:</strong> Silicates, metals (iron core)</div>
+        <div class="fact-item"><strong>Natural Satellites:</strong> 0 moons</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Dive Sections -->
+  <section id="deepdive">
+    <h2> Deep Dive: Mercury's Geological & Atmospheric Systems</h2>
+    
+    <div class="info-card">
+      <h3>Internal Structure & Composition</h3>
+      <p>Mercury has a surprisingly large iron core that makes up 
+        about 75% of the planet's diameter (approximately 3,600 km wide).
+         Scientists believe this massive core is partially liquid, generating a 
+         weak magnetic field. The core is surrounded by a silicate mantle (about 500 km thick) 
+         and a thin crust. Mercury's high density (5.427 g/cm³) is second only to Earth in our solar system.</p>
+      <ul style="margin-top: 0.8rem; margin-left: 1.5rem;">
+        <li><strong>Core:</strong> Iron-nickel alloy, radius ~1,800 km, partially molten</li>
+        <li><strong>Mantle:</strong> Silicate rocks, thickness ~500 km</li>
+        <li><strong>Crust:</strong> Thin basaltic crust, 50-100 km thick</li>
+        <li><strong>Magnetic Field:</strong> About 1% as strong as Earth's</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3> Extreme Temperatures & Surface Features</h3>
+      <p>Mercury experiences the most extreme temperature variations of any planet in our solar system.
+         During the day, temperatures soar to 427°C (800°F) - hot enough to melt lead! At night, 
+         temperatures plummet to -173°C (-280°F). This 600°C temperature swing is due to the lack of
+          atmosphere to retain heat. The surface is heavily cratered, resembling Earth's Moon, with 
+          smooth plains and massive cliffs called "scarps" formed as the planet's core cooled and contracted.</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Notable Surface Features</h3>
+      <p>Mercury's surface is marked by:</p>
+      <ul style="margin-top: 0.8rem; margin-left: 1.5rem;">
+        <li><strong>Caloris Basin:</strong> One of the largest impact craters in the solar system (1,550 km wide)</li>
+        <li><strong>Discovery Rupes:</strong> A massive cliff about 350 km long and 2 km high</li>
+        <li><strong>Water Ice:</strong> Surprisingly, water ice exists in permanently shadowed polar craters</li>
+        <li><strong>Chaotic Terrain:</strong> Weird, jumbled landscape opposite the Caloris Basin</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>Significance & Unique Characteristics</h3>
+      <p>Mercury is the fastest planet in our solar system, 
+        orbiting the Sun at 47.87 km/s (107,000 mph). 
+        It completes its orbit in just 88 Earth days! A unique 3:2 orbital resonance means
+       Mercury rotates three times on its axis for every two orbits around the Sun.
+        Despite being the closest planet to the Sun, it's not the hottest (Venus holds that title)
+         due to its lack of atmosphere. The Mariner 10 and MESSENGER missions have revealed
+         fascinating details about this mysterious world.</p>
+    </div>
+  </section>
+
+  <!-- the video explaining mercury's geology and atmosphere /downloaded  -->
+  <section id="media">
+    <h2>📺 Educational Media</h2>
+    <div class="info-card">
+      <h3>Mercury: The Swift Planet Documentary</h3>
+      <iframe width="100%" height="400" src="Images/Mercury.mp4" title="NASA Mercury documentary-the planet closest to the Sun" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 20px;"></iframe>
+      <p class="info-note" style="margin-top: 0.8rem;">Source: NASA's MESSENGER Mission</p>
+    </div>
+  </section>
+
+ 
+
+  <footer>
+    <p>BigPlanetarium — Bristol's Educational Planetarium | Data sources: NASA, ESA, JAXA</p>
+    <p>Accessibility: High contrast mode, font scaling, keyboard navigation, full audio narration support.</p>
+  </footer>
+</div>
+
+<script src="JAVASCRIPT/mercury.js"></script>
+</body>
+</html>

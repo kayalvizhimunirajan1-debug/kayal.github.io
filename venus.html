@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>BigPlanetarium | Planet Venus - Earth's Twin</title>
+  <meta name="description" content="Detailed exploration of Planet Venus: structure, extreme atmosphere, and fascinating facts from BigPlanetarium.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/venus.css">
+</head>
+<body>
+
+<canvas id="galaxy-canvas"></canvas>
+
+<div class="access-toolbar" aria-label="Accessibility controls">
+  <button id="highContrastBtn" aria-label="High contrast mode"> High Contrast</button>
+  <button id="fontSizeBtn" aria-label="Increase font size"> A+</button>
+</div>
+
+<div class="container">
+   <a href="index.html" class="back-link">← Back to Milky Way Explorer</a>
+  <section id="header">
+    <h1>Venus</h1>
+    <p style="text-align: center; font-size: 1.2rem; margin-bottom: 1rem;">Earth's Twin — The Hottest Planet</p>
+    
+    <div class="planet-canvas-container">
+      <div class="planet-rotation-wrapper">
+        <img id="venusImage" src="Images/venus.png" alt="Planet Venus" class="rotating-planet" onerror="this">
+        <div class="planet-glow"></div>
+      </div>
+    </div>
+  </section>
+  <section id="simulation">
+    <h2>Venus Rotation Control</h2>
+    
+    <div class="simulation-box">
+      <div class="speed-control">
+        <label for="rotationSpeed">Rotation Speed:</label>
+        <input type="range" id="rotationSpeed" min="0" max="20" step="0.5" value="8">
+        <span id="speedValue">8°/s</span>
+        <button id="resetSpeed" class="btn">Reset</button>
+      </div>
+      
+      <div class="slider-control">
+        <button id="pauseRotationBtn" class="btn">⏸️ Pause</button>
+        <button id="resumeRotationBtn" class="btn">▶️ Resume</button>
+        <button id="resetRotationBtn" class="btn">🔄 Reset</button>
+      </div>
+    </div>
+
+  <section id="overview">
+    <h2>📊 Scientifically Accurate Venus Data</h2>
+    <div class="info-card">
+      <div class="facts-grid">
+        <div class="fact-item"><strong>Distance from Sun:</strong> 108,208,930 km (0.723 AU)</div>
+        <div class="fact-item"><strong>Equatorial Diameter:</strong> 12,103.6 km</div>
+        <div class="fact-item"><strong>Surface Gravity:</strong> 8.87 m/s² (0.907 × Earth)</div>
+        <div class="fact-item"><strong>Atmosphere:</strong> 96.5% CO₂, 3.5% N₂</div>
+        <div class="fact-item"><strong>Surface Temperature:</strong> 462°C (864°F)</div>
+        <div class="fact-item"><strong>Day Length:</strong> 243 Earth days (retrograde)</div>
+        <div class="fact-item"><strong>Orbital Period:</strong> 224.7 Earth days</div>
+        <div class="fact-item"><strong>Axial Tilt:</strong> 177.4°</div>
+        <div class="fact-item"><strong>Surface:</strong> Basalt, volcanic plains</div>
+        <div class="fact-item"><strong>Moons:</strong> 0</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="deepdive">
+    <h2> Deep Dive: Venus' Atmosphere & Geology</h2>
+    
+    <div class="info-card">
+      <h3> Extreme Atmosphere</h3>
+      <p>Surface pressure is 92 times Earth's-
+        equivalent to being 900m deep in the ocean. 
+        The runaway greenhouse effect keeps temperature constant at 462°C.</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Surface Features</h3>
+      <ul>
+        <li><strong>Maxwell Montes:</strong> 11 km high mountains</li>
+        <li><strong>Aphrodite Terra:</strong> Africa-sized highland</li>
+        <li><strong>Coronae:</strong> Unique volcanic structures</li>
+        <li><strong>Over 1,000 volcanoes</strong></li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>Retrograde Rotation</h3>
+      <p>Venus rotates backwards - Sun rises in the west! 
+        A day on Venus is longer than its year (243 days vs 225 days).</p>
+    </div>
+  </section>
+
+    <div class="simulation-box">
+      <h3>Venus' Orbit</h3>
+      <canvas id="orbitCanvas" width="600" height="350"></canvas>
+      <div class="slider-control">
+        <label for="orbitSlider">Orbit Position:</label>
+        <input type="range" id="orbitSlider" min="0" max="360" step="1" value="0">
+        <span id="angleDisplay">0°</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="media">
+    <h2>📺 Educational Media</h2>
+    <div class="info-card">
+      <iframe width="100%" height="400" src="Images/Venus.mp4" title="Venus documentary" frameborder="0" allowfullscreen style="border-radius: 20px;"></iframe>
+    <p class="info-note" style="margin-top: 0.8rem;">Source: NASA's Scientific Visualization Studio</p>
+    </div>
+  </section>
+  <a href="index.html" class="back-link">← Back to Milky Way Explorer</a>
+  <footer>
+    <p>BigPlanetarium — Bristol's Educational Planetarium | Data sources: NASA, ESA</p>
+  </footer>
+</div>
+
+<script src="JAVASCRIPT/venus.js"></script>
+</body>
+</html>
